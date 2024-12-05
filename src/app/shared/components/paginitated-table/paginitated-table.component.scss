@@ -1,0 +1,128 @@
+::ng-deep {
+  .paginitated-table-container {
+    .p-datatable-records {
+      .p-datatable-table {
+        .p-datatable-thead {
+          tr {
+            th {
+              background: #eeee;
+            }
+          }
+        }
+        .p-datatable-tbody {
+          tr {
+            td {
+              box-sizing: border-box;
+
+              span {
+                &.table-data-status {
+                  display: flex;
+                  margin: 0 auto;
+                  width: 1.15rem;
+                  height: 1.15rem;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  border-radius: 50%;
+                  font-size: 0.75rem;
+                  padding-top: 2px;
+
+                  &.pi.pi-check {
+                    background-color: green;
+                  }
+                  &.pi.pi-times {
+                    background-color: red;
+                  }
+                }
+
+                &.table-data-content-truncate {
+                  display: block;
+                  max-width: 150px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+
+                .p-chip {
+                  .p-chip-icon {
+                    font-size: 0.5rem;
+                    color: inherit;
+                  }
+                  .p-chip-text {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    color: inherit;
+                  }
+
+                  &.active-chip {
+                    background-color: #00800033;
+                    color: #008000;
+                  }
+                  &.inactive-chip {
+                    background-color: #ff000033;
+                    color: #ff0000;
+                  }
+                }
+              }
+
+              .action-btns {
+                gap: 5px;
+
+                p-button {
+                  width: 30px;
+                  height: 30px;
+                  display: block;
+                }
+                .p-button {
+                  width: 100%;
+                  height: 100%;
+                  color: #000;
+
+                  .p-button-icon {
+                    font-weight: 600;
+                  }
+                  &.active-user {
+                    .p-button-icon {
+                      &.pi.pi-user {
+                        position: relative;
+
+                        &::after {
+                          content: "";
+                          width: 2px;
+                          height: 150%;
+                          background-color: #000;
+                          position: absolute;
+                          left: calc(50% - 1px);
+                          rotate: -30deg;
+                          top: -20%;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              &.column-invalid {
+                background-color: #ff000055;
+                box-shadow: inset 0 0 1px 0 #ff0000;
+              }
+              &.column-duplicate {
+                background-color: #daa52055;
+                box-shadow: inset 0 0 1px 0 #daa520;
+              }
+              &.column-exists {
+                background-color: #0000ff55;
+                box-shadow: inset 0 0 1px 0 #0000ff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hover-highlight:hover {
+    cursor: pointer;
+    background-color: #cccccc;
+  }
+}

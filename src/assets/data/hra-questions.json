@@ -1,0 +1,283 @@
+[
+  {
+    "QuestionId": "ask_birth_date",
+    "Question": "Can you please tell me when were you born?",
+    "QuestionType": "date",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_weight",
+    "Question": "I maintain a healthy weight. How much do you weigh?",
+    "QuestionType": "number",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [10, 300],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_gender",
+    "Question": "And what is your gender identity?",
+    "QuestionType": "singleselect",
+    "Options": ["Male", "Female", "Other"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_height",
+    "Question": "And how tall are you?",
+    "QuestionType": "number",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [2, 9],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_waist",
+    "Question": "What is your waist size?",
+    "QuestionType": "number",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [5, 50],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_blood_group",
+    "Question": "Please choose your Blood Group?",
+    "QuestionType": "singleselect",
+    "Options": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_activity_level",
+    "Question": "I am super active! But how active are you?",
+    "QuestionType": "singleselect",
+    "Options": [
+      "Inactive",
+      "Sedentary",
+      "Moderately Active",
+      "Highly Active"
+    ],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_diet",
+    "Question": "What kind of diet do you prefer?",
+    "QuestionType": "singleselect",
+    "Options": [
+      "Unhealthy",
+      "Not Particularly Healthy",
+      "Reasonably Healthy",
+      "Very Healthy"
+    ],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_consume",
+    "Question": "Select all that you consume",
+    "QuestionType": "multiselect",
+    "Options": ["Alcohol", "Tobacco", "Cigarette", "None"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_junk_food",
+    "Question": "I eat very little junk food. Do you consume it thrice a month?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_veg_type",
+    "Question": "Are you a…",
+    "QuestionType": "singleselect",
+    "Options": ["Vegetarian", "Non Vegetarian ", "Vegan", "Eggetarian"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_fast_month",
+    "Question": "I can fast for 7 months…Do you fast every month?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_competitive_sport",
+    "Question": "Do you play any sports? ",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_drink_water",
+    "Question": "I am a drinker! How much water do you drink every day?",
+    "QuestionType": "number",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [1, 30],
+    "AnswerNote": "1 glass of water = 250 ml",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_sleep",
+    "Question": "I sleep a lot! How many hours do you sleep every night?",
+    "QuestionType": "number",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [3, 20],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_sound_sleep",
+    "Question": "Are you a sound sleeper like me?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_suffer",
+    "Question": "Were you diagnosed with any of these?",
+    "QuestionType": "multiselect",
+    "Options": [
+      "Blood Pressure",
+      "Diabetes",
+      "Cholesterol",
+      "Thyroid",
+      "None"
+    ],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_familyhistory",
+    "Question": "Were your parents diagnosed with any of these?",
+    "QuestionType": "multiselect",
+    "Options": [
+      "Blood Pressure",
+      "Diabetes",
+      "Cholesterol",
+      "Thyroid",
+      "None"
+    ],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_addicted",
+    "Question": "Do you watch a lot of content online?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_stress",
+    "Question": "Can you recall any stress, anxiety, or depression from the last 3 months? ",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No", "Don't know"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_commuting",
+    "Question": "Does it take more than an hour for you to reach your office?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_spend_time",
+    "Question": "Is your screen time more than 4 hours?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_health_check_up",
+    "Question": "Do you get a health check-up done regularly?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_appreciation",
+    "Question": "Did you win any awards, appreciation, recommendations in the last three months?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No", "Don't know"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_familytime",
+    "Question": "By the way, do you spend quality time with your family? ",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "ask_meditate",
+    "Question": "Do you calm your mind through meditation or yoga?",
+    "QuestionType": "singleselect",
+    "Options": ["Yes", "No"],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": "Please provide valid answer"
+  }
+]
