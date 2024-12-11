@@ -6,7 +6,10 @@ export const resendOTPTimeSpan = 30; // in seconds
 const baseAPIUrl = ''; // base API url
 
 export const environment = {
-  production: false,
   baseAPIUrl,
+  production: false,
   debouncingTime: 300,
+  region: 'ap-south-1',
+  accessKeyId: '',
+  secretAccessKey: '',
 };

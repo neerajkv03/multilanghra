@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main.component';
-import { DashboardComponent } from './subpages/dashboard/dashboard.component';
+import { ConfigpageComponent } from './subpages/configpage/configpage.component';
+import { ConfiglangComponent } from './subpages/configlang/configlang.component';
+import { ChatbotComponent } from './subpages/chatbot/chatbot.component';
+import { AnalysisComponent } from './subpages/analysis/analysis.component';
 
 const routes: Routes = [
   {
@@ -13,11 +16,23 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dashboard',
+        redirectTo: 'en/chatbot',
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent,
+        path: 'configpage',
+        component: ConfigpageComponent,
+      },
+      {
+        path: 'configlang',
+        component: ConfiglangComponent,
+      },
+      {
+        path: ':lang/chatbot',
+        component: ChatbotComponent,
+      },
+      {
+        path: ':lang/analysis',
+        component: AnalysisComponent,
       },
     ],
   },
@@ -28,4 +43,9 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class MainRoutingModule {}
-export const MainRoutingComponents = [DashboardComponent]; // must be followed
+export const MainRoutingComponents = [
+  ConfigpageComponent,
+  ConfiglangComponent,
+  ChatbotComponent,
+  AnalysisComponent,
+]; // must be followed

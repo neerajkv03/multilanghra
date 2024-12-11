@@ -1,0 +1,248 @@
+<div class="w-100 configlang-container">
+  <div
+    class="w-100 d-flex align-items-center justify-content-center configlang-head"
+  >
+    <div class="d-flex align-items-center configlang-pageinfo">
+      <ng-container [formGroup]="pageTranslationForm">
+        <input
+          type="text"
+          class="d-block text-center"
+          formControlName="pageName"
+          pInputText
+          placeholder="Enter Page Name"
+        />
+      </ng-container>
+    </div>
+  </div>
+  <div class="w-100 my-4 configlang-table">
+    <table
+      [style.width.px]="
+        columnsArray.controls.length * 225 +
+        (columnsArray.controls.length - 1) * 13 +
+        261
+      "
+    >
+      <thead class="w-100">
+        <tr class="w-100">
+          <ng-container [formGroup]="pageTranslationForm">
+            <ng-container formArrayName="columnsArray">
+              <th
+                class="d-flex align-items-center justify-content-between"
+                *ngFor="let column of columnsArray.controls; let i = index"
+                #configlangColumnTh
+              >
+                <div class="configlang-column-title">
+                  {{ column?.value?.headerName
+                  }}<ng-container *ngIf="column?.value?.languageCode"
+                    >({{ column?.value?.languageCode }})</ng-container
+                  >
+                </div>
+                <div
+                  class="d-flex align-items-center configlang-column-controls"
+                  *ngIf="i > 1"
+                >
+                  <p-button
+                    icon="pi pi-language"
+                    [rounded]="true"
+                    (onClick)="tp.toggle($event)"
+                  ></p-button>
+                  <p-overlayPanel
+                    #tp
+                    [appendTo]="configlangColumnTh"
+                    styleClass="configlang-overlaypanel"
+                  >
+                    <div class="w-100">
+                      <h6 class="w-100 mb-2 fw-bold">Translate:</h6>
+                      <div
+                        class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls configlang-overlaypanel-controls-translate"
+                      >
+                        <p-button
+                          label="All Empty Rows"
+                          (onClick)="tp.toggle($event)"
+                          [rounded]="true"
+                        ></p-button>
+                        <p-button
+                          label="All Rows"
+                          (onClick)="tp.toggle($event)"
+                          [rounded]="true"
+                        ></p-button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+                  <p-button
+                    icon="pi pi-trash"
+                    severity="danger"
+                    [rounded]="true"
+                    (onClick)="dp.toggle($event)"
+                  ></p-button>
+                  <p-overlayPanel
+                    #dp
+                    [appendTo]="configlangColumnTh"
+                    styleClass="configlang-overlaypanel configlang-overlaypanel-delete"
+                  >
+                    <div class="w-100">
+                      <h6 class="w-100 mb-2 fw-bold">Are you sure:</h6>
+                      <div
+                        class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls"
+                      >
+                        <p-button
+                          label="Yes"
+                          (onClick)="dp.toggle($event)"
+                          [rounded]="true"
+                        ></p-button>
+                        <p-button
+                          label="No"
+                          (onClick)="dp.toggle($event)"
+                          [rounded]="true"
+                        ></p-button>
+                      </div>
+                    </div>
+                  </p-overlayPanel>
+                </div>
+              </th>
+            </ng-container>
+          </ng-container>
+        </tr>
+        <tr></tr>
+      </thead>
+      <tbody class="w-100">
+        <tr class="w-100">
+          <ng-container [formGroup]="pageTranslationForm">
+            <ng-container
+              formArrayName="columnsArray"
+              *ngFor="let column of columnsArray.controls; let i = index"
+            >
+              <td formGroupName="{{ i }}">
+                <ng-container formArrayName="rowsArray">
+                  <div
+                    class="w-100 textarea-block"
+                    *ngFor="let row of getRowsArray(i).controls; let j = index"
+                    [ngClass]="{ 'textarea-tranlation-key-block': i === 0 }"
+                    #configlangColumnTd
+                  >
+                    <textarea
+                      rows="3"
+                      class="w-100 d-block"
+                      pInputTextarea
+                      placeholder="Enter Text"
+                      formControlName="{{ j }}"
+                    ></textarea>
+                    <p-button
+                      icon="pi pi-language"
+                      [rounded]="true"
+                      *ngIf="i === 0"
+                      (onClick)="tp1.toggle($event)"
+                      [disabled]="!isRowWiseTranslable(row, j, i)"
+                    ></p-button>
+                    <p-overlayPanel
+                      #tp1
+                      [appendTo]="configlangColumnTd"
+                      styleClass="configlang-overlaypanel configlang-overlaypanel-translate-1"
+                    >
+                      <div class="w-100">
+                        <h6 class="w-100 mb-2 fw-bold">Translate:</h6>
+                        <div
+                          class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls configlang-overlaypanel-controls-translate"
+                        >
+                          <p-button
+                            label="All Empty Cols"
+                            (onClick)="tp1.toggle($event)"
+                            [rounded]="true"
+                          ></p-button>
+                          <p-button
+                            label="All Cols"
+                            (onClick)="tp1.toggle($event)"
+                            [rounded]="true"
+                          ></p-button>
+                        </div>
+                      </div>
+                    </p-overlayPanel>
+                    <p-button
+                      icon="pi pi-trash"
+                      severity="danger"
+                      [rounded]="true"
+                      *ngIf="i === 0"
+                      (onClick)="dp1.toggle($event)"
+                    ></p-button>
+                    <p-overlayPanel
+                      #dp1
+                      [appendTo]="configlangColumnTd"
+                      styleClass="configlang-overlaypanel configlang-overlaypanel-delete"
+                    >
+                      <div class="w-100">
+                        <h6 class="w-100 mb-2 fw-bold">Are you sure:</h6>
+                        <div
+                          class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls"
+                        >
+                          <p-button
+                            label="Yes"
+                            (onClick)="dp1.toggle($event)"
+                            [rounded]="true"
+                          ></p-button>
+                          <p-button
+                            label="No"
+                            (onClick)="dp1.toggle($event)"
+                            [rounded]="true"
+                          ></p-button>
+                        </div>
+                      </div>
+                    </p-overlayPanel>
+                  </div>
+                </ng-container>
+              </td>
+            </ng-container>
+          </ng-container>
+          <td
+            class="d-flex flex-wrap align-items-center configlang-addlang-controls"
+          >
+            <p-dropdown
+              [options]="allAvailableTranslationLanguages"
+              [(ngModel)]="selectedLanguage"
+              placeholder="Select a Language"
+              [filter]="true"
+              filterBy="label"
+              [showClear]="true"
+              optionDisabled="translated"
+              optionLabel="label"
+              appendTo="body"
+            >
+              <ng-template pTemplate="selectedItem">
+                <span
+                  >{{ selectedLanguage?.label
+                  }}<ng-container *ngIf="selectedLanguage?.value"
+                    >({{ selectedLanguage?.value }})</ng-container
+                  ></span
+                >
+              </ng-template>
+              <ng-template let-language pTemplate="item">
+                <span>{{ language?.label }}({{ language?.value }})</span>
+              </ng-template>
+            </p-dropdown>
+            <p-button
+              [disabled]="!selectedLanguage"
+              label="Add Language Column"
+              (onClick)="addLanguageColumn()"
+            ></p-button>
+          </td>
+        </tr>
+        <tr class="w-100">
+          <td class="d-flex flex-wrap configlang-addrow-controls">
+            <p-button
+              label="Add Translate Key Row"
+              (onClick)="addTranslateKeyRow()"
+              [disabled]="!isLastTranslateKeyAndLastEnglishTranslationValid()"
+            ></p-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="w-100 configlang-foot">
+    <p-button
+      label="Submit Page Translation"
+      styleClass="d-block mx-auto"
+      [style]="{ width: '300px' }"
+      (onClick)="submitPageTranslation()"
+    ></p-button>
+  </div>
+</div>

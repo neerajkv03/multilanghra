@@ -5,8 +5,7 @@ import { CommonService } from '@services/common.service';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  template: `<router-outlet></router-outlet>`,
 })
 export class MainComponent implements OnInit, AfterViewInit {
   constructor(

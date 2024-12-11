@@ -67,11 +67,13 @@ h1 {
 }
 button.p-button {
   font-size: 0.9rem;
-  padding-bottom: 0.55rem;
 
   .p-button-label {
     font-weight: 500;
     letter-spacing: 0.1px;
+  }
+  &.p-button-icon-only.p-button-rounded {
+    border-radius: 50%;
   }
 }
 .invalid-form {
