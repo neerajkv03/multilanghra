@@ -58,12 +58,16 @@
                       >
                         <p-button
                           label="All Empty Rows"
-                          (onClick)="tp.toggle($event)"
+                          (onClick)="
+                            translateColWiseText(i, false); tp.toggle($event)
+                          "
                           [rounded]="true"
                         ></p-button>
                         <p-button
                           label="All Rows"
-                          (onClick)="tp.toggle($event)"
+                          (onClick)="
+                            translateColWiseText(i, true); tp.toggle($event)
+                          "
                           [rounded]="true"
                         ></p-button>
                       </div>
@@ -81,18 +85,20 @@
                     styleClass="configlang-overlaypanel configlang-overlaypanel-delete"
                   >
                     <div class="w-100">
-                      <h6 class="w-100 mb-2 fw-bold">Are you sure:</h6>
+                      <h6 class="w-100 mb-2 fw-bold">Are you sure to:</h6>
                       <div
                         class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls"
                       >
                         <p-button
-                          label="Yes"
+                          label="No"
                           (onClick)="dp.toggle($event)"
                           [rounded]="true"
                         ></p-button>
                         <p-button
-                          label="No"
-                          (onClick)="dp.toggle($event)"
+                          label="Yes"
+                          (onClick)="
+                            columnsArray.removeAt(i); dp.toggle($event)
+                          "
                           [rounded]="true"
                         ></p-button>
                       </div>
@@ -146,12 +152,16 @@
                         >
                           <p-button
                             label="All Empty Cols"
-                            (onClick)="tp1.toggle($event)"
+                            (onClick)="
+                              translateRowWiseText(j, false); tp1.toggle($event)
+                            "
                             [rounded]="true"
                           ></p-button>
                           <p-button
                             label="All Cols"
-                            (onClick)="tp1.toggle($event)"
+                            (onClick)="
+                              translateRowWiseText(j, true); tp1.toggle($event)
+                            "
                             [rounded]="true"
                           ></p-button>
                         </div>
@@ -167,7 +177,7 @@
                     <p-overlayPanel
                       #dp1
                       [appendTo]="configlangColumnTd"
-                      styleClass="configlang-overlaypanel configlang-overlaypanel-delete"
+                      styleClass="configlang-overlaypanel configlang-overlaypanel-delete-1"
                     >
                       <div class="w-100">
                         <h6 class="w-100 mb-2 fw-bold">Are you sure:</h6>
@@ -175,13 +185,13 @@
                           class="w-100 d-flex flex-wrap align-items-center configlang-overlaypanel-controls"
                         >
                           <p-button
-                            label="Yes"
+                            label="No"
                             (onClick)="dp1.toggle($event)"
                             [rounded]="true"
                           ></p-button>
                           <p-button
-                            label="No"
-                            (onClick)="dp1.toggle($event)"
+                            label="Yes"
+                            (onClick)="deleteWholeRow(j); dp1.toggle($event)"
                             [rounded]="true"
                           ></p-button>
                         </div>

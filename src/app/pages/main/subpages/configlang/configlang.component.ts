@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 
 import { AWSService } from '@services/aws.service';
+import { GlobalService } from '@services/global.service';
 
 @Component({
   selector: 'app-configlang',
@@ -16,7 +17,11 @@ import { AWSService } from '@services/aws.service';
   styleUrls: ['./configlang.component.scss'],
 })
 export class ConfiglangComponent implements OnInit {
-  constructor(private awsService: AWSService, private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private awsService: AWSService,
+    private globalService: GlobalService
+  ) {}
   allAvailableTranslationLanguages: {
     value: string;
     label: string;
@@ -147,19 +152,9 @@ export class ConfiglangComponent implements OnInit {
     //       console.log(res);
     //     },
     //   });
-    // this.awsService
-    //   .translateText({
-    //     TargetLanguageCode: 'es',
-    //     Text: 'Hello, how are you?',
-    //   })
-    //   .subscribe({
-    //     next: (res) => {
-    //       console.log(res);
-    //     },
-    //   });
-
     this.getPageDetails();
   }
+  getPageDetails() {}
   getRowsArray(index: number): FormArray {
     return this.columnsArray?.at(index)?.get('rowsArray') as FormArray;
   }
@@ -186,7 +181,6 @@ export class ConfiglangComponent implements OnInit {
       Array.from(this.getRowsArray(columnIndex + 2)?.controls || []).length > 0
     );
   }
-  getPageDetails() {}
   addTranslateKeyRow() {
     Array.from(this.columnsArray.controls).forEach((column, index) => {
       this.getRowsArray(index).push(this.fb.control(''));
@@ -222,7 +216,90 @@ export class ConfiglangComponent implements OnInit {
       this.selectedLanguage = null;
     }
   }
+  translateText(
+    targetLangCode: string,
+    engText: string,
+    control: AbstractControl
+  ) {
+    this.awsService
+      .translateText({
+        TargetLanguageCode: targetLangCode,
+        Text: engText,
+      })
+      .subscribe({
+        next: (res) => {
+          if (res?.success) {
+            control?.setValue(res?.data?.TranslatedText);
+          } else this.globalService.triggerToastMessage('error', res?.message);
+        },
+        error: (err) => {
+          this.globalService.triggerToastMessage('error', err?.message);
+        },
+      });
+  }
+  translateRowWiseText(rowIndex: number, all: boolean = false) {
+    this.columnsArray.controls.forEach(
+      (control: AbstractControl, columnIndex: number) => {
+        if (columnIndex > 1) {
+          const reqLanguageCode: string = control?.value?.languageCode;
+          const reqEnglishText: string =
+            this.getRowsArray(1).controls[rowIndex].value;
+          const reqFormControl: AbstractControl =
+            this.getRowsArray(columnIndex)?.controls[rowIndex];
+
+          if (all || !reqFormControl.value) {
+            this.translateText(reqLanguageCode, reqEnglishText, reqFormControl);
+          }
+        }
+      }
+    );
+  }
+  translateColWiseText(colIndex: number, all: boolean = false) {
+    const reqLanguageCode: string = (
+      this.columnsArray.at(colIndex) as AbstractControl
+    )?.value?.languageCode;
+    const reqFormArray: FormArray = this.getRowsArray(colIndex);
+
+    reqFormArray?.controls.forEach(
+      (reqFormControl: AbstractControl, rowIndex: number) => {
+        const reqEnglishText: string =
+          this.getRowsArray(1).controls[rowIndex].value;
+
+        if (all || !reqFormControl.value) {
+          this.translateText(reqLanguageCode, reqEnglishText, reqFormControl);
+        }
+      }
+    );
+  }
+  deleteWholeRow(rowIndex: number) {
+    this.columnsArray.controls.forEach((_, columnIndex: number) => {
+      this.getRowsArray(columnIndex).removeAt(rowIndex);
+    });
+  }
   submitPageTranslation() {
-    console.log(this.pageTranslationForm);
+    const pageTranslationFormValue = this.pageTranslationForm?.value;
+    const columnsArrayValue = pageTranslationFormValue?.columnsArray;
+    const tranlateKeyRowsArrayValue: any[] =
+      columnsArrayValue?.shift()?.rowsArray;
+    const languagesArray = columnsArrayValue;
+    const saveObject: any = {
+      pageName: pageTranslationFormValue?.pageName,
+      pageId: pageTranslationFormValue?.pageId,
+    };
+
+    for (const eLangObj of languagesArray) {
+      const rowsArrayValue = eLangObj?.rowsArray;
+      saveObject[eLangObj.languageCode] = {};
+
+      tranlateKeyRowsArrayValue?.forEach((eTransKey: string, index: number) => {
+        saveObject[eLangObj.languageCode][eTransKey] = rowsArrayValue[index];
+      });
+
+      saveObject[eLangObj.languageCode] = JSON.stringify({
+        ...saveObject[eLangObj.languageCode],
+      });
+    }
+
+    console.log(saveObject);
   }
 }

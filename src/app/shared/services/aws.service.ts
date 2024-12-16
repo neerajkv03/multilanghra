@@ -13,10 +13,12 @@ import { v4 as uuidv4 } from 'uuid';
 import {
   TranslateClient,
   TranslateTextCommand,
+  TranslateTextCommandOutput,
 } from '@aws-sdk/client-translate';
 
 import { environment } from '@env/environment';
 import { GlobalService } from '@services/global.service';
+import { CommonService } from '@services/common.service';
 
 // const postBody = {
 //   name: 'John Doe',
@@ -40,7 +42,7 @@ import { GlobalService } from '@services/global.service';
   providedIn: 'root',
 })
 export class AWSService {
-  constructor(private globalService: GlobalService) {}
+  constructor(private commonService: CommonService) {}
   private readonly awsClientCredentials = {
     region: environment?.region,
     credentials: {
@@ -262,6 +264,7 @@ export class AWSService {
     message: string;
     data: any;
   }> {
+    this.commonService.setLoaderState(true);
     return new Observable((observer) => {
       try {
         this.translateClient
@@ -272,7 +275,7 @@ export class AWSService {
               Text,
             })
           )
-          .then((response) => {
+          .then((response: TranslateTextCommandOutput) => {
             observer.next({
               success: true,
               message: 'Data has been deleted successfully',
@@ -288,6 +291,7 @@ export class AWSService {
           })
           .finally(() => {
             observer.complete();
+            this.commonService.setLoaderState(false);
           });
       } catch (error: any) {
         observer.error({
@@ -296,6 +300,7 @@ export class AWSService {
           data: null,
         });
         observer.complete();
+        this.commonService.setLoaderState(false);
       }
     });
   }

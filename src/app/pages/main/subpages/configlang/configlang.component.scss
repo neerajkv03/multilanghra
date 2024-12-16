@@ -174,8 +174,8 @@
             gap: 10px;
 
             p-button {
-              width: 120px;
-              height: 40px;
+              width: 120px !important;
+              height: 40px !important;
 
               .p-button {
                 width: 100%;
@@ -187,10 +187,10 @@
             &.configlang-overlaypanel-controls-translate {
               p-button {
                 &:first-child {
-                  width: 140px;
+                  width: 140px !important;
                 }
                 &:last-child {
-                  width: 100px;
+                  width: 100px !important;
                 }
               }
             }
@@ -215,15 +215,41 @@
             }
           }
           &.configlang-overlaypanel-translate-1 {
-            left: 20px !important;
-            top: 18px !important;
-            z-index: 1000 !important;
+            left: calc(100% + 26px) !important;
+            top: -25px !important;
 
             &::before {
-              right: 66px !important;
+              right: auto !important;
+              left: -10px !important;
+              top: 15px !important;
+              border-color: transparent !important;
+              border-right-color: #ccc !important;
             }
             &::after {
-              right: 68px !important;
+              right: auto !important;
+              left: -7px !important;
+              top: 17px !important;
+              border-color: transparent !important;
+              border-right-color: #ddd !important;
+            }
+          }
+          &.configlang-overlaypanel-delete-1 {
+            left: calc(100% + 26px) !important;
+            top: 6px !important;
+
+            &::before {
+              right: auto !important;
+              left: -10px !important;
+              top: 15px !important;
+              border-color: transparent !important;
+              border-right-color: #ccc !important;
+            }
+            &::after {
+              right: auto !important;
+              left: -7px !important;
+              top: 17px !important;
+              border-color: transparent !important;
+              border-right-color: #ddd !important;
             }
           }
         }

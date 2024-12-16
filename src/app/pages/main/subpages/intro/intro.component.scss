@@ -1,0 +1,21 @@
+::ng-deep {
+  .intro-container {
+    max-width: 450px;
+    min-height: 100svh;
+    background-color: var(--body-background-color);
+
+    p {
+      font-weight: 500;
+    }
+
+    .p-button {
+      background-color: var(--foot-save-button-background-color);
+      border-color: var(--foot-save-button-background-color);
+      color: var(--foot-save-button-color);
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}

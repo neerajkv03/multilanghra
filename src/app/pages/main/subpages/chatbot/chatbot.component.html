@@ -1,2 +1,212 @@
-<p>dashboard works!</p>
-<h1>{{ "HELLO" | translate }}</h1>
+<!-- <h1>{{ "HELLO" | translate }}</h1> -->
+<!-- <fa-icon [icon]="faRotate"></fa-icon> -->
+<div class="mx-auto chatbot-container">
+  <div class="w-100 chatbot-container-head">
+    <div
+      class="w-100 d-flex align-items-center justify-content-between chatbot-container-head-controls"
+    >
+      <button
+        class="p-button p-button-icon-only p-button-rounded"
+        (click)="previousQuestion()"
+        [disabled]="answeredQuestionsArray.length <= 0"
+      >
+        <fa-icon [icon]="faRotateLeft"></fa-icon>
+      </button>
+      <h4>Health Risk Assessment</h4>
+      <button
+        class="p-button p-button-icon-only p-button-rounded"
+        (click)="previousQuestion(true)"
+        [disabled]="answeredQuestionsArray.length <= 0"
+      >
+        <fa-icon [icon]="faRotate"></fa-icon>
+      </button>
+    </div>
+    <div class="w-100 chatbot-container-head-progress">
+      <div
+        class="w-100 d-flex align-items-center justify-content-center chatbot-container-head-progress-bar"
+        [style]="
+          '--progressed:' +
+          (answeredQuestionsArray.length / (questionsArray.length - 1)) * 100 +
+          '%'
+        "
+      >
+        <b class="w-100 text-center"
+          >You attended {{ answeredQuestionsArray.length }} questions out of
+          {{ questionsArray.length - 1 }} questions</b
+        >
+      </div>
+    </div>
+  </div>
+  <div class="w-100 chatbot-container-body">
+    <ng-container *ngFor="let answeredQuestion of answeredQuestionsArray">
+      <div
+        class="d-flex align-items-center justify-content-start chatbot-question"
+      >
+        <div class="chatbot-question-inner">
+          <div class="chatbot-question-content">
+            <p>{{ answeredQuestion?.Question }}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex align-items-center justify-content-end chatbot-question chatbot-question-answered"
+      >
+        <div class="chatbot-question-inner">
+          <div class="chatbot-question-content">
+            <p>{{ answeredQuestion?.Answer?.[0] }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <div
+      class="d-flex align-items-center justify-content-start chatbot-question"
+    >
+      <div class="chatbot-question-inner">
+        <ng-container *ngIf="currentQuestion">
+          <div class="chatbot-question-content">
+            <p>{{ currentQuestion?.Question }}</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!currentQuestion">
+          <div class="d-flex align-items-center chatbot-question-loader">
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-100 d-flex align-items-center flex-wrap chatbot-container-foot"
+    *ngIf="currentQuestion?.QuestionType"
+  >
+    <ng-container [ngSwitch]="currentQuestion?.QuestionType">
+      <div
+        *ngSwitchCase="'date'"
+        class="w-100 d-flex align-items-center justify-content-between chatbot-container-foot-date"
+      >
+        <p-calendar
+          [formControl]="answerInput"
+          [minDate]="minDobDate"
+          [maxDate]="maxDobDate"
+          [readonlyInput]="true"
+          dateFormat="dd-mm-yy"
+          placeholder="Select"
+        ></p-calendar>
+        <button
+          class="p-button chatbot-container-foot-save"
+          (click)="saveQuestionAnswer()"
+        >
+          <span class="p-button-label">Save</span>
+        </button>
+      </div>
+      <div
+        *ngSwitchCase="'number'"
+        class="w-100 d-flex align-items-center justify-content-between chatbot-container-foot-number"
+      >
+        <p-inputNumber
+          [maxlength]="3"
+          [useGrouping]="false"
+          [formControl]="answerInput"
+          [placeholder]="currentQuestion?.AnswerNote"
+          inputmode="numeric"
+          *ngIf="currentQuestion?.QuestionId !== 'ask_height'"
+        >
+        </p-inputNumber>
+        <div
+          class="d-flex align-items-center justify-content-between"
+          *ngIf="currentQuestion?.QuestionId === 'ask_height'"
+          style="width: calc(100% - 110px)"
+        >
+          <p-inputNumber
+            [maxlength]="2"
+            [useGrouping]="false"
+            [formControl]="answerInput"
+            placeholder="In feet"
+            inputmode="numeric"
+            [style.width]="'calc(50% - 7px)'"
+          >
+          </p-inputNumber>
+          <b style="font-size: 1.75rem">.</b>
+          <p-inputNumber
+            [maxlength]="2"
+            [useGrouping]="false"
+            [formControl]="answerInputTwo"
+            placeholder="In inches"
+            inputmode="numeric"
+            [style.width]="'calc(50% - 7px)'"
+          >
+          </p-inputNumber>
+        </div>
+        <button
+          class="p-button chatbot-container-foot-save"
+          (click)="saveQuestionAnswer()"
+        >
+          <span class="p-button-label">Save</span>
+        </button>
+      </div>
+      <div
+        *ngSwitchCase="'single'"
+        class="w-100 d-flex align-items-center justify-content-between chatbot-container-foot-single"
+        [ngClass]="{
+          'chatbot-container-foot-single-bloodgroups':
+            currentQuestion?.QuestionId === 'ask_blood_group'
+        }"
+      >
+        <p-selectButton
+          [options]="currentQuestion?.Options"
+          [formControl]="answerInput"
+          optionLabel="label"
+          optionValue="value"
+          [allowEmpty]="false"
+          (onChange)="saveQuestionAnswer()"
+        ></p-selectButton>
+      </div>
+      <div
+        *ngSwitchCase="'multiple'"
+        class="w-100 h-100 d-flex align-items-center"
+      >
+        <div
+          class="w-100 d-flex align-items-center justify-content-between chatbot-container-foot-multiple"
+        >
+          <p-selectButton
+            [options]="currentQuestion?.Options"
+            [formControl]="answerInput"
+            optionLabel="label"
+            optionValue="value"
+            [allowEmpty]="false"
+            [multiple]="true"
+          ></p-selectButton>
+        </div>
+        <div class="chatbot-container-foot-multiple-none-save">
+          <button
+            class="p-button chatbot-container-foot-none"
+            (click)="
+              answerInput.reset();
+              answerInput.setValue('None');
+              saveQuestionAnswer()
+            "
+            *ngIf="
+              !answerInput.value ||
+              answerInput.value?.length <= 0 ||
+              answerInput.value === 'None'
+            "
+          >
+            <span class="p-button-label">None</span>
+          </button>
+          <button
+            class="p-button chatbot-container-foot-save"
+            (click)="saveQuestionAnswer()"
+            *ngIf="
+              answerInput.value?.length > 0 && answerInput.value !== 'None'
+            "
+          >
+            <span class="p-button-label">Save</span>
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,9 +29,11 @@ import { TimelineModule } from 'primeng/timeline';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TooltipModule } from 'primeng/tooltip';
 import { AccordionModule } from 'primeng/accordion';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 const pModules = [
   CommonModule,
+  FontAwesomeModule,
   ButtonModule,
   RippleModule,
   InputTextModule,
@@ -55,6 +59,7 @@ const pModules = [
   RadioButtonModule,
   TooltipModule,
   AccordionModule,
+  SelectButtonModule,
 ];
 
 @NgModule({

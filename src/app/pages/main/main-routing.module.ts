@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { ConfigpageComponent } from './subpages/configpage/configpage.component';
 import { ConfiglangComponent } from './subpages/configlang/configlang.component';
+import { IntroComponent } from './subpages/intro/intro.component';
 import { ChatbotComponent } from './subpages/chatbot/chatbot.component';
 import { AnalysisComponent } from './subpages/analysis/analysis.component';
 
@@ -16,7 +17,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'en/chatbot',
+        redirectTo: 'en/intro',
       },
       {
         path: 'configpage',
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'configlang',
         component: ConfiglangComponent,
+      },
+      {
+        path: ':lang/intro',
+        component: IntroComponent,
       },
       {
         path: ':lang/chatbot',

@@ -3,7 +3,7 @@ export const CyptoKey = 'Btal94i7pArBtal94i7pArBtal94i7pA';
 
 export const resendOTPTimeSpan = 30; // in seconds
 
-const baseAPIUrl = ''; // base API url
+const baseAPIUrl = 'https://newhraapi.watchyourhealth.com/api'; // base API url
 
 export const environment = {
   baseAPIUrl,

@@ -6,8 +6,8 @@
     "Options": [],
     "Answer": [],
     "AnswerValidation": [],
-    "AnswerNote": "",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "AnswerNote": "Click to select your DOB",
+    "InvalidAnswerMssg": "Please select valid date of birth"
   },
   {
     "QuestionId": "ask_weight",
@@ -16,14 +16,27 @@
     "Options": [],
     "Answer": [],
     "AnswerValidation": [10, 300],
-    "AnswerNote": "",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "AnswerNote": "Enter your weight in Kg",
+    "InvalidAnswerMssg": "Please enter your weight in Kg ranging from 10-300"
   },
   {
     "QuestionId": "ask_gender",
     "Question": "And what is your gender identity?",
-    "QuestionType": "singleselect",
-    "Options": ["Male", "Female", "Other"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Male",
+        "value": "Male"
+      },
+      {
+        "label": "Female",
+        "value": "Female"
+      },
+      {
+        "label": "Others",
+        "value": "Others"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -37,7 +50,7 @@
     "Answer": [],
     "AnswerValidation": [2, 9],
     "AnswerNote": "",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "InvalidAnswerMssg": "Please enter your height in feet ranging from 2-9 & in inches from 0-11"
   },
   {
     "QuestionId": "ask_waist",
@@ -46,14 +59,47 @@
     "Options": [],
     "Answer": [],
     "AnswerValidation": [5, 50],
-    "AnswerNote": "",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "AnswerNote": "Enter your waist size in cm",
+    "InvalidAnswerMssg": "Please enter your waist size in cm ranging from 5-50"
   },
   {
     "QuestionId": "ask_blood_group",
     "Question": "Please choose your Blood Group?",
-    "QuestionType": "singleselect",
-    "Options": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "A+",
+        "value": "A+"
+      },
+      {
+        "label": "A-",
+        "value": "A-"
+      },
+      {
+        "label": "B+",
+        "value": "B+"
+      },
+      {
+        "label": "B-",
+        "value": "B-"
+      },
+      {
+        "label": "AB+",
+        "value": "AB+"
+      },
+      {
+        "label": "AB-",
+        "value": "AB-"
+      },
+      {
+        "label": "O+",
+        "value": "O+"
+      },
+      {
+        "label": "O-",
+        "value": "O-"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -62,12 +108,24 @@
   {
     "QuestionId": "ask_activity_level",
     "Question": "I am super active! But how active are you?",
-    "QuestionType": "singleselect",
+    "QuestionType": "single",
     "Options": [
-      "Inactive",
-      "Sedentary",
-      "Moderately Active",
-      "Highly Active"
+      {
+        "label": "Inactive",
+        "value": "Inactive"
+      },
+      {
+        "label": "Sedentary",
+        "value": "Sedentary"
+      },
+      {
+        "label": "Moderately Active",
+        "value": "Moderately Active"
+      },
+      {
+        "label": "Highly Active",
+        "value": "Highly Active"
+      }
     ],
     "Answer": [],
     "AnswerValidation": [],
@@ -77,12 +135,24 @@
   {
     "QuestionId": "ask_diet",
     "Question": "What kind of diet do you prefer?",
-    "QuestionType": "singleselect",
+    "QuestionType": "single",
     "Options": [
-      "Unhealthy",
-      "Not Particularly Healthy",
-      "Reasonably Healthy",
-      "Very Healthy"
+      {
+        "label": "Unhealthy",
+        "value": "Unhealthy"
+      },
+      {
+        "label": "Not Particularly Healthy",
+        "value": "Not Particularly Healthy"
+      },
+      {
+        "label": "Reasonably Healthy",
+        "value": "Reasonably Healthy"
+      },
+      {
+        "label": "Very Healthy",
+        "value": "Very Healthy"
+      }
     ],
     "Answer": [],
     "AnswerValidation": [],
@@ -92,8 +162,21 @@
   {
     "QuestionId": "ask_consume",
     "Question": "Select all that you consume",
-    "QuestionType": "multiselect",
-    "Options": ["Alcohol", "Tobacco", "Cigarette", "None"],
+    "QuestionType": "multiple",
+    "Options": [
+      {
+        "label": "Alcohol",
+        "value": "Alcohol"
+      },
+      {
+        "label": "Tobacco",
+        "value": "Tobacco"
+      },
+      {
+        "label": "Cigarette",
+        "value": "Cigarette"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -102,8 +185,17 @@
   {
     "QuestionId": "ask_junk_food",
     "Question": "I eat very little junk food. Do you consume it thrice a month?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -112,8 +204,25 @@
   {
     "QuestionId": "ask_veg_type",
     "Question": "Are you a…",
-    "QuestionType": "singleselect",
-    "Options": ["Vegetarian", "Non Vegetarian ", "Vegan", "Eggetarian"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Vegetarian",
+        "value": "Vegetarian"
+      },
+      {
+        "label": "Non Vegetarian",
+        "value": "Non Vegetarian"
+      },
+      {
+        "label": "Vegan",
+        "value": "Vegan"
+      },
+      {
+        "label": "Eggetarian",
+        "value": "Eggetarian"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -122,8 +231,17 @@
   {
     "QuestionId": "ask_fast_month",
     "Question": "I can fast for 7 months…Do you fast every month?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -132,8 +250,17 @@
   {
     "QuestionId": "ask_competitive_sport",
     "Question": "Do you play any sports? ",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -147,7 +274,7 @@
     "Answer": [],
     "AnswerValidation": [1, 30],
     "AnswerNote": "1 glass of water = 250 ml",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "InvalidAnswerMssg": "Please enter no of glasses ranging from 1-30"
   },
   {
     "QuestionId": "ask_sleep",
@@ -156,14 +283,23 @@
     "Options": [],
     "Answer": [],
     "AnswerValidation": [3, 20],
-    "AnswerNote": "",
-    "InvalidAnswerMssg": "Please provide valid answer"
+    "AnswerNote": "Enter your sleep hours",
+    "InvalidAnswerMssg": "Please enter your sleep hours ranging from 3-20"
   },
   {
     "QuestionId": "ask_sound_sleep",
     "Question": "Are you a sound sleeper like me?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -172,13 +308,24 @@
   {
     "QuestionId": "ask_suffer",
     "Question": "Were you diagnosed with any of these?",
-    "QuestionType": "multiselect",
+    "QuestionType": "multiple",
     "Options": [
-      "Blood Pressure",
-      "Diabetes",
-      "Cholesterol",
-      "Thyroid",
-      "None"
+      {
+        "label": "Blood Pressure",
+        "value": "Blood Pressure"
+      },
+      {
+        "label": "Diabetes",
+        "value": "Diabetes"
+      },
+      {
+        "label": "Cholesterol",
+        "value": "Cholesterol"
+      },
+      {
+        "label": "Thyroid",
+        "value": "Thyroid"
+      }
     ],
     "Answer": [],
     "AnswerValidation": [],
@@ -188,13 +335,24 @@
   {
     "QuestionId": "ask_familyhistory",
     "Question": "Were your parents diagnosed with any of these?",
-    "QuestionType": "multiselect",
+    "QuestionType": "multiple",
     "Options": [
-      "Blood Pressure",
-      "Diabetes",
-      "Cholesterol",
-      "Thyroid",
-      "None"
+      {
+        "label": "Blood Pressure",
+        "value": "Blood Pressure"
+      },
+      {
+        "label": "Diabetes",
+        "value": "Diabetes"
+      },
+      {
+        "label": "Cholesterol",
+        "value": "Cholesterol"
+      },
+      {
+        "label": "Thyroid",
+        "value": "Thyroid"
+      }
     ],
     "Answer": [],
     "AnswerValidation": [],
@@ -204,8 +362,17 @@
   {
     "QuestionId": "ask_addicted",
     "Question": "Do you watch a lot of content online?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -214,8 +381,21 @@
   {
     "QuestionId": "ask_stress",
     "Question": "Can you recall any stress, anxiety, or depression from the last 3 months? ",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No", "Don't know"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      },
+      {
+        "label": "Don't know",
+        "value": "Don't know"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -224,8 +404,17 @@
   {
     "QuestionId": "ask_commuting",
     "Question": "Does it take more than an hour for you to reach your office?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -234,8 +423,17 @@
   {
     "QuestionId": "ask_spend_time",
     "Question": "Is your screen time more than 4 hours?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -244,8 +442,17 @@
   {
     "QuestionId": "ask_health_check_up",
     "Question": "Do you get a health check-up done regularly?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerNote": "",
     "InvalidAnswerMssg": "Please provide valid answer"
@@ -253,8 +460,21 @@
   {
     "QuestionId": "ask_appreciation",
     "Question": "Did you win any awards, appreciation, recommendations in the last three months?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No", "Don't know"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      },
+      {
+        "label": "Don't know",
+        "value": "Don't know"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -263,8 +483,17 @@
   {
     "QuestionId": "ask_familytime",
     "Question": "By the way, do you spend quality time with your family? ",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
@@ -273,11 +502,30 @@
   {
     "QuestionId": "ask_meditate",
     "Question": "Do you calm your mind through meditation or yoga?",
-    "QuestionType": "singleselect",
-    "Options": ["Yes", "No"],
+    "QuestionType": "single",
+    "Options": [
+      {
+        "label": "Yes",
+        "value": "Yes"
+      },
+      {
+        "label": "No",
+        "value": "No"
+      }
+    ],
     "Answer": [],
     "AnswerValidation": [],
     "AnswerNote": "",
     "InvalidAnswerMssg": "Please provide valid answer"
+  },
+  {
+    "QuestionId": "completed_hra",
+    "Question": "You have answered all the questions. Have a healthy day ahead. Thanks & Goodbye",
+    "QuestionType": "",
+    "Options": [],
+    "Answer": [],
+    "AnswerValidation": [],
+    "AnswerNote": "",
+    "InvalidAnswerMssg": ""
   }
 ]

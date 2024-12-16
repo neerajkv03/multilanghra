@@ -7,9 +7,32 @@
 
 :root {
   // CSS variables
-  --primary-background-color: #ffffff;
-  --primary-text-color: #000000;
-  --navbar-height: 60px;
+  --head-background-color: #91ac8f;
+  --head-title-color: #40483d;
+  --head-controls-background-color: #4b5945;
+  --head-controls-color: #ffffff;
+  --head-progress-background-color: #b2c9ad;
+  --head-progress-color: #40483d;
+  --head-progressed-background-color: #66785f;
+
+  --body-background-color: #d1dccf;
+  --body-message-question-background-color: #aaaaaa;
+  --body-message-question-color: #000000;
+  --body-message-question-border-color: #000000;
+  --body-message-answer-background-color: #91ac8f;
+  --body-message-answer-color: #000000;
+  --body-message-answer-border-color: #000000;
+
+  --foot-background-color: #b2c9ad;
+  --foot-input-background-color: #d1dccf;
+  --foot-input-color: #4b5945;
+  --foot-save-button-background-color: #4b5945;
+  --foot-save-button-color: #ffffff;
+  --foot-option-button-background-color: #91ac8f;
+  --foot-option-button-color: #000000;
+  --foot-option-button-active-background-color: #66785f;
+  --foot-option-button-active-color: #ffffff;
+  --foot-scrollbar-background-color: #40483d;
 }
 :host {
   -webkit-font-smoothing: antialiased;

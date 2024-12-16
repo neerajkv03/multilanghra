@@ -6,8 +6,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { PrimeNGModules } from 'src/app/primeng.module';
-import { SidebarContentComponent } from '@components/sidebar-content/sidebar-content.component';
-import { NavbarComponent } from '@components/navbar/navbar.component';
 import { NotFoundComponent } from '@components/notfound/notfound.component';
 
 import {
@@ -29,8 +27,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     NotFoundComponent,
     MainRoutingModule,
     PrimeNGModules,
-    NavbarComponent,
-    SidebarContentComponent,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
