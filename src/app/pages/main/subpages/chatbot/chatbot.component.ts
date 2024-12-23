@@ -43,7 +43,7 @@ export class ChatbotComponent implements OnInit {
   answerInputTwo: FormControl = new FormControl(null, []);
   questionsArray: Question[] = [];
   answeredQuestionsArray: Question[] = [];
-  curentQuestionIndex: number = 0;
+  curentQuestionIndex: number = 8;
   currentQuestion: Question | any = null;
   minDobDate: Date = new Date();
   maxDobDate: Date = new Date();

@@ -6,12 +6,18 @@
 
     p {
       font-weight: 500;
+      border: 2px solid var(--retro-border-color);
+      border-bottom-width: 5px;
+      border-radius: 10px;
+      padding: 1rem;
     }
 
     .p-button {
       background-color: var(--foot-save-button-background-color);
-      border-color: var(--foot-save-button-background-color);
       color: var(--foot-save-button-color);
+
+      border: 2px solid var(--retro-border-color);
+      border-bottom-width: 5px;
 
       &:focus {
         box-shadow: none !important;

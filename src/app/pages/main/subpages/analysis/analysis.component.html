@@ -1,1 +1,119 @@
-<p>analysis works!</p>
+<!-- <h1>{{ animateValue(0, 100, 1000) }}</h1> -->
+<!-- <div class="counter" style="--end: 100"></div> -->
+<div class="mx-auto analysis-container">
+  <div class="w-100 analysis-container-section analysis-hra-score">
+    <div class="w-100 d-flex align-items-start justify-content-between">
+      <div class="analysis-hra-score-text" #ahst>
+        <h5>Hi Your <b>HRA</b><br />Score is</h5>
+        <h1
+          class="counter"
+          style="--end: {{ 450 }}; --use-width: {{ ahst.offsetWidth - 2 }}px"
+        ></h1>
+      </div>
+      <div class="analysis-hra-score-meter" #ahsm></div>
+    </div>
+    <div class="w-100 analysis-hra-score-range">
+      <div class="w-100 d-flex align-items-start analysis-hra-score-range-bar">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </div>
+      <div class="w-100 d-flex align-items-start analysis-hra-score-range-text">
+        <li>Risk</li>
+        <li>Transformation</li>
+        <li>Healthy</li>
+        <li>Prime</li>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 mt-3 d-flex flex-wrap analysis-hra-score-stats">
+    <div
+      class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
+    >
+      <h5 class="w-100 mb-3">Body Profile</h5>
+      <div class="w-100">
+        <img
+          class="mx-auto d-block"
+          src="assets/image-fonticons/body_profile.png"
+          alt="body_profile"
+        />
+        <h1 class="counter my-2" style="--end: {{ 100 }};"></h1>
+        <h6 class="mx-auto pt-2">100</h6>
+      </div>
+    </div>
+    <div
+      class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
+    >
+      <h5 class="w-100 mb-3">Life Style</h5>
+      <div class="w-100">
+        <img
+          class="mx-auto d-block"
+          src="assets/image-fonticons/life_style.png"
+          alt="life_style"
+        />
+        <h1 class="counter my-2" style="--end: {{ 80 }};"></h1>
+        <h6 class="mx-auto pt-2">100</h6>
+      </div>
+    </div>
+    <div
+      class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
+    >
+      <h5 class="w-100 mb-3">Stress</h5>
+      <div class="w-100">
+        <img
+          class="mx-auto d-block"
+          src="assets/image-fonticons/stress.png"
+          alt="stress"
+        />
+        <h1 class="counter my-2" style="--end: {{ 70 }};"></h1>
+        <h6 class="mx-auto pt-2">100</h6>
+      </div>
+    </div>
+    <div
+      class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
+    >
+      <h5 class="w-100 mb-3">Diet</h5>
+      <div class="w-100">
+        <img
+          class="mx-auto d-block"
+          src="assets/image-fonticons/diet.png"
+          alt="diet"
+        />
+        <h1 class="counter my-2" style="--end: {{ 90 }};"></h1>
+        <h6 class="mx-auto pt-2">100</h6>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 mt-3 analysis-container-section analysis-hra-means">
+    <h5 class="mb-4">What does your <b>Health Score</b> means?</h5>
+    <h1 class="mb-2">180-540 | Transformation</h1>
+    <p class="mb-2">
+      Where do we start our journey to getting healthier? Your Health Score is
+      that starting point. The Health Score distils your health status into a
+      single number. Based on parameters covering your body, your feelings or
+      stress levels, your family medical history and your lifestyle, it is
+      expressed as a number from 1 to 900 and it changes depending on how you
+      move the needle on these.
+    </p>
+    <p>
+      Great. You are in good shape but you can fine-tune your efforts on your
+      diet, activity and lifestyle and you could very well get into the Prime
+      zone.
+    </p>
+  </div>
+  <div class="w-100 mt-3 analysis-container-section analysis-hra-bmis">
+    <h5 class="mb-4">Body Mass Index (BMI)</h5>
+    <div
+      class="w-100 d-flex align-items-center analysis-container-section analysis-hra-bmi"
+    >
+      <img
+        width="50"
+        class="me-3"
+        src="assets/image-fonticons/user_bmi.png"
+        alt="user_bmi"
+      />
+      <div class="" style="width: calc(100% - 50px - 1rem)"></div>
+    </div>
+  </div>
+</div>

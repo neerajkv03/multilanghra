@@ -2,38 +2,41 @@
 <!-- <fa-icon [icon]="faRotate"></fa-icon> -->
 <div class="mx-auto chatbot-container">
   <div class="w-100 chatbot-container-head">
-    <div
-      class="w-100 d-flex align-items-center justify-content-between chatbot-container-head-controls"
-    >
-      <button
-        class="p-button p-button-icon-only p-button-rounded"
-        (click)="previousQuestion()"
-        [disabled]="answeredQuestionsArray.length <= 0"
-      >
-        <fa-icon [icon]="faRotateLeft"></fa-icon>
-      </button>
-      <h4>Health Risk Assessment</h4>
-      <button
-        class="p-button p-button-icon-only p-button-rounded"
-        (click)="previousQuestion(true)"
-        [disabled]="answeredQuestionsArray.length <= 0"
-      >
-        <fa-icon [icon]="faRotate"></fa-icon>
-      </button>
-    </div>
-    <div class="w-100 chatbot-container-head-progress">
+    <div class="w-100 h-100 chatbot-container-head-content">
       <div
-        class="w-100 d-flex align-items-center justify-content-center chatbot-container-head-progress-bar"
-        [style]="
-          '--progressed:' +
-          (answeredQuestionsArray.length / (questionsArray.length - 1)) * 100 +
-          '%'
-        "
+        class="w-100 d-flex align-items-center justify-content-between chatbot-container-head-controls"
       >
-        <b class="w-100 text-center"
-          >You attended {{ answeredQuestionsArray.length }} questions out of
-          {{ questionsArray.length - 1 }} questions</b
+        <button
+          class="p-button p-button-icon-only"
+          (click)="previousQuestion()"
+          [disabled]="answeredQuestionsArray.length <= 0"
         >
+          <fa-icon [icon]="faRotateLeft"></fa-icon>
+        </button>
+        <h4>Health Risk Assessment</h4>
+        <button
+          class="p-button p-button-icon-only"
+          (click)="previousQuestion(true)"
+          [disabled]="answeredQuestionsArray.length <= 0"
+        >
+          <fa-icon [icon]="faRotate"></fa-icon>
+        </button>
+      </div>
+      <div class="w-100 chatbot-container-head-progress">
+        <div
+          class="w-100 h-100 d-flex align-items-center justify-content-center chatbot-container-head-progress-bar"
+          [style]="
+            '--progressed:' +
+            (answeredQuestionsArray.length / (questionsArray.length - 1)) *
+              100 +
+            '%'
+          "
+        >
+          <b class="w-100 text-center"
+            >You attended {{ answeredQuestionsArray.length }} questions out of
+            {{ questionsArray.length - 1 }} questions</b
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -116,7 +119,7 @@
         >
         </p-inputNumber>
         <div
-          class="d-flex align-items-center justify-content-between"
+          class="d-flex h-100 align-items-center justify-content-between"
           *ngIf="currentQuestion?.QuestionId === 'ask_height'"
           style="width: calc(100% - 110px)"
         >

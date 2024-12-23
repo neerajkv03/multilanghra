@@ -28,6 +28,7 @@
     "@ngx-translate/http-loader": "^16.0.0",
     "bootstrap": "^5.3.3",
     "crypto-js": "^4.2.0",
+    "echarts": "^5.5.1",
     "jsencrypt": "^3.3.2",
     "primeicons": "^6.0.1",
     "primeng": "^16.9.1",
