@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { RouteEndpoints } from '@constants/route-endpoints';
 import { HttpsService } from '@services/https.service';
@@ -14,7 +15,8 @@ export class IntroComponent implements OnInit {
   constructor(
     private httpsService: HttpsService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private translate: TranslateService
   ) {}
   lang: string = '';
 

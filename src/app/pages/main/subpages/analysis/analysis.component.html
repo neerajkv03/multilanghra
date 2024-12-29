@@ -1,10 +1,8 @@
-<!-- <h1>{{ animateValue(0, 100, 1000) }}</h1> -->
-<!-- <div class="counter" style="--end: 100"></div> -->
 <div class="mx-auto analysis-container">
   <div class="w-100 analysis-container-section analysis-hra-score">
     <div class="w-100 d-flex align-items-start justify-content-between">
       <div class="analysis-hra-score-text" #ahst>
-        <h5>Hi Your <b>HRA</b><br />Score is</h5>
+        <h5>{{ "analysis.HRA_SCORE_IS" | translate }}</h5>
         <h1
           class="counter"
           style="--end: {{ 450 }}; --use-width: {{ ahst.offsetWidth - 2 }}px"
@@ -20,100 +18,398 @@
         <li></li>
       </div>
       <div class="w-100 d-flex align-items-start analysis-hra-score-range-text">
-        <li>Risk</li>
-        <li>Transformation</li>
-        <li>Healthy</li>
-        <li>Prime</li>
+        <li>{{ "analysis.RISK" | translate }}</li>
+        <li>{{ "analysis.TRANSFORMATION" | translate }}</li>
+        <li>{{ "analysis.HEALTHY" | translate }}</li>
+        <li>{{ "analysis.PRIME" | translate }}</li>
       </div>
     </div>
+  </div>
+  <div
+    class="w-100 my-4 d-flex align-items-center justify-content-center analysis-container-divider"
+  >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </div>
   <div class="w-100 mt-3 d-flex flex-wrap analysis-hra-score-stats">
     <div
       class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
     >
-      <h5 class="w-100 mb-3">Body Profile</h5>
+      <h5 class="w-100 mb-3">{{ "analysis.BODY_PROFILE" | translate }}</h5>
       <div class="w-100">
         <img
           class="mx-auto d-block"
           src="assets/image-fonticons/body_profile.png"
           alt="body_profile"
         />
-        <h1 class="counter my-2" style="--end: {{ 100 }};"></h1>
+        <h1 class="counter mt-2 mb-1" style="--end: {{ 100 }};"></h1>
         <h6 class="mx-auto pt-2">100</h6>
       </div>
     </div>
     <div
       class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
     >
-      <h5 class="w-100 mb-3">Life Style</h5>
+      <h5 class="w-100 mb-3">{{ "analysis.LIFE_STYLE" | translate }}</h5>
       <div class="w-100">
         <img
           class="mx-auto d-block"
           src="assets/image-fonticons/life_style.png"
           alt="life_style"
         />
-        <h1 class="counter my-2" style="--end: {{ 80 }};"></h1>
+        <h1 class="counter mt-2 mb-1" style="--end: {{ 80 }};"></h1>
         <h6 class="mx-auto pt-2">100</h6>
       </div>
     </div>
     <div
       class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
     >
-      <h5 class="w-100 mb-3">Stress</h5>
+      <h5 class="w-100 mb-3">{{ "analysis.STRESS" | translate }}</h5>
       <div class="w-100">
         <img
           class="mx-auto d-block"
           src="assets/image-fonticons/stress.png"
           alt="stress"
         />
-        <h1 class="counter my-2" style="--end: {{ 70 }};"></h1>
+        <h1 class="counter mt-2 mb-1" style="--end: {{ 70 }};"></h1>
         <h6 class="mx-auto pt-2">100</h6>
       </div>
     </div>
     <div
       class="text-center d-flex flex-wrap align-content-between p-3 analysis-hra-score-stat"
     >
-      <h5 class="w-100 mb-3">Diet</h5>
+      <h5 class="w-100 mb-3">{{ "analysis.DIET" | translate }}</h5>
       <div class="w-100">
         <img
           class="mx-auto d-block"
           src="assets/image-fonticons/diet.png"
           alt="diet"
         />
-        <h1 class="counter my-2" style="--end: {{ 90 }};"></h1>
+        <h1 class="counter mt-2 mb-1" style="--end: {{ 90 }};"></h1>
         <h6 class="mx-auto pt-2">100</h6>
       </div>
     </div>
   </div>
-  <div class="w-100 mt-3 analysis-container-section analysis-hra-means">
-    <h5 class="mb-4">What does your <b>Health Score</b> means?</h5>
-    <h1 class="mb-2">180-540 | Transformation</h1>
-    <p class="mb-2">
-      Where do we start our journey to getting healthier? Your Health Score is
-      that starting point. The Health Score distils your health status into a
-      single number. Based on parameters covering your body, your feelings or
-      stress levels, your family medical history and your lifestyle, it is
-      expressed as a number from 1 to 900 and it changes depending on how you
-      move the needle on these.
-    </p>
-    <p>
-      Great. You are in good shape but you can fine-tune your efforts on your
-      diet, activity and lifestyle and you could very well get into the Prime
-      zone.
-    </p>
+  <div
+    class="w-100 my-4 d-flex align-items-center justify-content-center analysis-container-divider"
+  >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </div>
-  <div class="w-100 mt-3 analysis-container-section analysis-hra-bmis">
-    <h5 class="mb-4">Body Mass Index (BMI)</h5>
+  <div class="w-100 analysis-container-section analysis-hra-means">
+    <h5 class="mb-4">{{ "analysis.HEALTH_SCORE_MEANS" | translate }}</h5>
+    <h1 class="mb-2" *ngIf="false">
+      0-180 | {{ "analysis.RISK" | translate }}
+    </h1>
+    <h1 class="mb-2" *ngIf="true">
+      181-540 | {{ "analysis.TRANSFORMATION" | translate }}
+    </h1>
+    <h1 class="mb-2" *ngIf="false">
+      541-810 | {{ "analysis.HEALTHY" | translate }}
+    </h1>
+    <h1 class="mb-2" *ngIf="false">
+      811-900 | {{ "analysis.PRIME" | translate }}
+    </h1>
+    <p class="mb-2">
+      {{ "analysis.HEALTH_SCORE_MEANS_DESCRIPTION" | translate }}
+    </p>
+    <p *ngIf="false">{{ "analysis.RISK_DESCRIPTION" | translate }}</p>
+    <p *ngIf="true">{{ "analysis.TRANSFORMATION_DESCRIPTION" | translate }}</p>
+    <p *ngIf="false">{{ "analysis.HEALTHY_DESCRIPTION" | translate }}</p>
+    <p *ngIf="false">{{ "analysis.PRIME_DESCRIPTION" | translate }}</p>
+  </div>
+  <div
+    class="w-100 my-4 d-flex align-items-center justify-content-center analysis-container-divider"
+  >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+  <div class="w-100 d-flex flex-wrap analysis-hra-bmis">
     <div
-      class="w-100 d-flex align-items-center analysis-container-section analysis-hra-bmi"
+      class="d-flex align-items-center analysis-container-section analysis-hra-bmi"
     >
       <img
-        width="50"
+        width="40"
         class="me-3"
         src="assets/image-fonticons/user_bmi.png"
         alt="user_bmi"
       />
-      <div class="" style="width: calc(100% - 50px - 1rem)"></div>
+      <div class="" style="width: calc(100% - 40px - 1rem)">
+        <h6 class="fw-bold">{{ "analysis.YOUR_BMI" | translate }}</h6>
+        <h4 class="mt-1 d-flex flex-wrap">
+          <span
+            class="mb-2 pb-1"
+            style="border-bottom: 3px solid var(--retro-border-color)"
+            >19.38</span
+          >
+          <span
+            class="w-100"
+            style="font-size: 1rem; font-weight: 600"
+            *ngIf="false"
+            >{{ "analysis.YOUR_BMI_UNDER_WEIGHT" | translate }}</span
+          >
+          <span
+            class="w-100"
+            style="font-size: 1rem; font-weight: 600"
+            *ngIf="true"
+            >{{ "analysis.YOUR_BMI_HEALTHY_RANGE" | translate }}</span
+          >
+          <span
+            class="w-100"
+            style="font-size: 1rem; font-weight: 600"
+            *ngIf="false"
+            >{{ "analysis.YOUR_BMI_SLIGHTLY_OVER_WEIGHT" | translate }}</span
+          >
+          <span
+            class="w-100"
+            style="font-size: 1rem; font-weight: 600"
+            *ngIf="false"
+            >{{ "analysis.YOUR_BMI_OVER_WEIGHT" | translate }}</span
+          >
+          <span
+            class="w-100"
+            style="font-size: 1rem; font-weight: 600"
+            *ngIf="false"
+            >{{ "analysis.YOUR_BMI_OBESE" | translate }}</span
+          >
+        </h4>
+      </div>
+    </div>
+    <div
+      class="d-flex align-items-center analysis-container-section analysis-hra-bmi"
+    >
+      <img
+        width="40"
+        class="me-3"
+        src="assets/image-fonticons/avg_bmi.png"
+        alt="avg_bmi"
+      />
+      <div class="" style="width: calc(100% - 40px - 1rem)">
+        <h6 class="fw-bold">{{ "analysis.AVG_BMI" | translate }}</h6>
+        <h4 class="mt-1">0</h4>
+      </div>
+    </div>
+    <div
+      class="d-flex align-items-center analysis-container-section analysis-hra-bmi"
+    >
+      <img
+        width="40"
+        class="me-3"
+        src="assets/image-fonticons/weight_loss.png"
+        alt="weight_loss"
+      />
+      <div class="" style="width: calc(100% - 40px - 1rem)">
+        <h6 class="fw-bold" *ngIf="true">
+          {{ "analysis.IDEAL_BMI_LOSE_WEIGHT" | translate }}
+        </h6>
+        <h6 class="fw-bold" *ngIf="false">
+          {{ "analysis.IDEAL_BMI_GAIN_WEIGHT" | translate }}
+        </h6>
+        <h4 class="mt-1">3.77 Kg</h4>
+      </div>
+    </div>
+    <div
+      class="d-flex align-items-center analysis-container-section analysis-hra-bmi"
+    >
+      <img
+        width="40"
+        class="me-3"
+        src="assets/image-fonticons/body_fat.png"
+        alt="weight_loss"
+      />
+      <div class="" style="width: calc(100% - 40px - 1rem)">
+        <h6 class="fw-bold">
+          {{ "analysis.BODY_FAT_PERCENTAGE" | translate }}
+        </h6>
+        <h4 class="mt-1">17.94 %</h4>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-100 my-4 d-flex align-items-center justify-content-center analysis-container-divider"
+  >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+  <div class="w-100 analysis-container-section analysis-hra-bioages">
+    <h5 class="w-100">{{ "analysis.BIOLOGICAL_AGE" | translate }}</h5>
+    <p class="w-100 my-4">
+      {{ "analysis.BIOLOGICAL_AGE_DESCRIPTION" | translate }}
+    </p>
+    <div class="w-100 d-flex" style="gap: 1rem">
+      <div
+        class="w-100 analysis-container-section"
+        style="width: calc(50% - 0.5rem)"
+      >
+        <h6 class="fw-bold">{{ "analysis.BIOLOGICAL_AGE_IS" | translate }}</h6>
+        <h4 class="mt-1">7 {{ "analysis.YEARS" | translate }}</h4>
+      </div>
+      <div
+        class="w-100 analysis-container-section"
+        style="width: calc(50% - 0.5rem)"
+      >
+        <h6 class="fw-bold">
+          {{ "analysis.CHRONOLOGICAL_AGE_IS" | translate }}
+        </h6>
+        <h4 class="mt-1">0 {{ "analysis.YEARS" | translate }}</h4>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-100 my-4 d-flex align-items-center justify-content-center analysis-container-divider"
+  >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+  <div class="w-100 analysis-container-section analysis-hra-happiness-index">
+    <div
+      class="w-100 mb-5 d-flex align-items-center analysis-hra-happiness-index-score"
+    >
+      <img
+        width="90"
+        class="me-3"
+        src="assets/image-fonticons/happiness_index_50.png"
+        alt="happiness_index_0"
+        *ngIf="false"
+      />
+      <img
+        width="90"
+        class="me-3"
+        src="assets/image-fonticons/happiness_index_50.png"
+        alt="happiness_index_25"
+        *ngIf="false"
+      />
+      <img
+        width="90"
+        class="me-3"
+        src="assets/image-fonticons/happiness_index_50.png"
+        alt="happiness_index_50"
+        *ngIf="true"
+      />
+      <img
+        width="90"
+        class="me-3"
+        src="assets/image-fonticons/happiness_index_50.png"
+        alt="happiness_index_75"
+        *ngIf="false"
+      />
+      <img
+        width="90"
+        class="me-3"
+        src="assets/image-fonticons/happiness_index_50.png"
+        alt="happiness_index_100"
+        *ngIf="false"
+      />
+      <div class="d-flex flex-wrap" style="width: calc(100% - 90px - 1rem)">
+        <h5 class="w-100 mb-2 ms-1">
+          {{ "analysis.HAPPINESS_INDEX" | translate }}
+        </h5>
+        <h4 class="d-flex align-items-end">50 <b>/ 100</b></h4>
+      </div>
+    </div>
+    <div class="w-100 mt-3 analysis-container-section">
+      <div class="w-100 d-flex align-items-center justify-content-between">
+        <h5 class="">{{ "analysis.ENDORPHIN" | translate }}</h5>
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_up.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="true"
+        />
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_down.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="false"
+        />
+      </div>
+      <p class="mt-2">{{ "analysis.ENDORPHIN_DESCRIPTION" | translate }}</p>
+    </div>
+    <div class="w-100 mt-3 analysis-container-section">
+      <div class="w-100 d-flex align-items-center justify-content-between">
+        <h5 class="">{{ "analysis.DOPAMINE" | translate }}</h5>
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_up.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="true"
+        />
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_down.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="false"
+        />
+      </div>
+      <p class="mt-2">{{ "analysis.DOPAMINE_DESCRIPTION" | translate }}</p>
+    </div>
+    <div class="w-100 mt-3 analysis-container-section">
+      <div class="w-100 d-flex align-items-center justify-content-between">
+        <h5 class="">{{ "analysis.OXYTOCIN" | translate }}</h5>
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_up.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="false"
+        />
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_down.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="true"
+        />
+      </div>
+      <p class="mt-2">{{ "analysis.OXYTOCIN_DESCRIPTION" | translate }}</p>
+    </div>
+    <div class="w-100 mt-3 analysis-container-section">
+      <div class="w-100 d-flex align-items-center justify-content-between">
+        <h5 class="">{{ "analysis.SEROTONIN" | translate }}</h5>
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_up.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="true"
+        />
+        <img
+          width="28"
+          src="assets/image-fonticons/thumbs_down.png"
+          alt="thumbs_up"
+          style="margin-top: -9px"
+          *ngIf="false"
+        />
+      </div>
+      <p class="mt-2">{{ "analysis.SEROTONIN_DESCRIPTION" | translate }}</p>
     </div>
   </div>
 </div>

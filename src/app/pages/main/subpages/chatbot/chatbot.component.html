@@ -13,7 +13,7 @@
         >
           <fa-icon [icon]="faRotateLeft"></fa-icon>
         </button>
-        <h4>Health Risk Assessment</h4>
+        <h4>{{ "chatbot.TITLE" | translate }}</h4>
         <button
           class="p-button p-button-icon-only"
           (click)="previousQuestion(true)"
@@ -33,8 +33,11 @@
           "
         >
           <b class="w-100 text-center"
-            >You attended {{ answeredQuestionsArray.length }} questions out of
-            {{ questionsArray.length - 1 }} questions</b
+            >{{ "chatbot.PROGRESS_ONE" | translate }}
+            {{ answeredQuestionsArray.length }}
+            {{ "chatbot.PROGRESS_TWO" | translate }}
+            {{ questionsArray.length - 1 }}
+            {{ "chatbot.PROGRESS_THREE" | translate }}</b
           >
         </div>
       </div>
@@ -47,7 +50,7 @@
       >
         <div class="chatbot-question-inner">
           <div class="chatbot-question-content">
-            <p>{{ answeredQuestion?.Question }}</p>
+            <p>{{ answeredQuestion.Question | translate }}</p>
           </div>
         </div>
       </div>
@@ -68,7 +71,7 @@
       <div class="chatbot-question-inner">
         <ng-container *ngIf="currentQuestion">
           <div class="chatbot-question-content">
-            <p>{{ currentQuestion?.Question }}</p>
+            <p>{{ currentQuestion?.Question | translate }}</p>
           </div>
         </ng-container>
         <ng-container *ngIf="!currentQuestion">

@@ -1,7 +1,7 @@
 [
   {
     "QuestionId": "ask_birth_date",
-    "Question": "Can you please tell me when were you born?",
+    "Question": "chatbot.ASK_BIRTH_DATE",
     "QuestionType": "date",
     "Options": [],
     "Answer": [],

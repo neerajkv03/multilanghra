@@ -1,4 +1,165 @@
 {
-  "HELLO": "Hello, World!",
-  "WELCOME": "Welcome to Angular i18n!"
+  "intro": {
+    "TITLE": "How Healthy Are You Really?",
+    "DESCRIPTION": "A health risk assessment (HRA) is a health questionnaire, used to provide individuals with an evalution of their health risks and quality of life. Based on your responses to the questions in the HRA, we will provide you with a risk calculation or Health Score.",
+    "START_HRA": "Click here to start HRA",
+    "DESCRIPTION_TWO": "This is a health risk assessment for you. Your Data is secure with us, please fill in the data to get an analysis on your Health and Health Score.",
+    "DISCLAIMER": "Disclaimer",
+    "DISCLAIMER_DESCRIPTION": "The information in the survey questionnaire and the result is not intended or implied to be a substitute for professional medical advice, diagnosis of treatment. All content, including text, graphics, images and information, contained on or available through this questionnaire is for general information purposes only."
+  },
+  "chatbot": {
+    "TITLE": "Health Risk Assessment",
+    "PROGRESS_ONE": "You attended",
+    "PROGRESS_TWO": "questions out of",
+    "PROGRESS_THREE": "questions",
+
+    "ASK_BIRTH_DATE": "Can you please tell me when were you born?",
+    "ASK_BIRTH_DATE_NOTE": "Click to select your DOB",
+    "ASK_BIRTH_DATE_INVALID": "Please select valid date of birth",
+
+    "ASK_WEIGHT": "I maintain a healthy weight. How much do you weigh?",
+    "ASK_WEIGHT_NOTE": "Enter your weight in Kg",
+    "ASK_WEIGHT_INVALID": "Please enter your weight in Kg ranging from 10-300",
+
+    "ASK_GENDER": "And what is your gender identity?",
+    "ASK_GENDER_MALE": "Male",
+    "ASK_GENDER_FEMALE": "Female",
+    "ASK_GENDER_OTHER": "Other",
+
+    "ASK_HEIGHT": "What is your height?",
+    "ASK_HEIGHT_FEETS": "Feets",
+    "ASK_HEIGHT_INCHES": "Inches",
+    "ASK_HEIGHT_INVALID": "Please enter your height in feet ranging from 2-9 & in inches from 0-11",
+
+    "ASK_WAIST": "What is your waist size?",
+    "ASK_WAIST_NOTE": "Enter your waist size in cm",
+    "ASK_WAIST_INVALID": "Please enter your waist size in cm ranging from 5-50",
+
+    "ASK_BLOOD_GROUP": "Please choose your Blood Group?",
+    "ASK_BLOOD_GROUP_A_POSITIVE": "A+",
+    "ASK_BLOOD_GROUP_A_NEGATIVE": "A-",
+    "ASK_BLOOD_GROUP_B_POSITIVE": "B+",
+    "ASK_BLOOD_GROUP_B_NEGATIVE": "B-",
+    "ASK_BLOOD_GROUP_AB_POSITIVE": "AB+",
+    "ASK_BLOOD_GROUP_AB_NEGATIVE": "AB-",
+    "ASK_BLOOD_GROUP_O_POSITIVE": "O+",
+    "ASK_BLOOD_GROUP_O_NEGATIVE": "O-",
+
+    "ASK_ACTIVITY_LEVEL": "I am super active! But how active are you?",
+    "ASK_ACTIVITY_LEVEL_INACTIVE": "Inactive",
+    "ASK_ACTIVITY_LEVEL_SEDENTARY": "Sedentary",
+    "ASK_ACTIVITY_LEVEL_MODERATELY_ACTIVE": "Moderately Active",
+    "ASK_ACTIVITY_LEVEL_HIGHLY_ACTIVE": "Highly Active",
+
+    "ASK_DIET": "What kind of diet do you prefer?",
+    "ASK_DIET_UNHEALTHY": "Unhealthy",
+    "ASK_DIET_NOT_PARTICULARLY_HEALTHY": "Not Particularly Healthy",
+    "ASK_DIET_REASONABLY_HEALTHY": "Reasonably Healthy",
+    "ASK_DIET_VERY_HEALTHY": "Very Healthy",
+
+    "ASK_CONSUME": "Select all that you consume",
+    "ASK_CONSUME_ALCOHOL": "Alcohol",
+    "ASK_CONSUME_TOBACCO": "Tobacco",
+    "ASK_CONSUME_CIGARETTES": "Cigarette",
+
+    "ASK_JUNK_FOOD": "I eat very little junk food. Do you consume it thrice a month?",
+    "OPTION_YES": "Yes",
+    "OPTION_NO": "No",
+
+    "ASK_VEG_TYPE": "Are you a...",
+    "ASK_VEG_TYPE_VEGETARIAN": "Vegetarian",
+    "ASK_VEG_TYPE_NON_VEGETARIAN": "Non Vegetarian",
+    "ASK_VEG_TYPE_VEGAN": "Vegan",
+    "ASK_VEG_TYPE_EGGETARIAN": "Eggetarian",
+
+    "ASK_FAST_MONTH": "I can fast for 7 months…Do you fast every month?",
+
+    "ASK_COMPETITIVE_SPORT": "Do you play any sports?",
+
+    "ASK_DRINK_WATER": "How much water do you drink every day?",
+    "ASK_DRINK_WATER_NOTE": "1 glass of water = 250 ml",
+    "ASK_DRINK_WATER_INVALID": "Please enter no of glasses ranging from 1-30",
+
+    "ASK_SLEEP": "I sleep a lot! How many hours do you sleep every night?",
+    "ASK_SLEEP_NOTE": "Enter your sleep hours",
+    "ASK_SLEEP_INVALID": "Please enter your sleep hours ranging from 3-20",
+
+    "ASK_SOUND_SLEEP": "Are you a sound sleeper like me?",
+
+    "ASK_SUFFER": "Were you diagnosed with any of these?",
+    "OPTION_BLOOD_PRESSURE": "Blood Pressure",
+    "OPTION_DIABETES": "Diabetes",
+    "OPTION_CHOLESTEROL": "Cholesterol",
+    "OPTION_THYROID": "Thyroid",
+
+    "ASK_FAMILY_HISTORY": "Were your parents diagnosed with any of these?",
+
+    "ASK_ADDICTED": "Do you watch a lot of content online?",
+
+    "ASK_STRESS": "Can you recall any stress, anxiety, or depression from the last 3 months?",
+    "OPTION_DONT_KNOW": "Don't know",
+
+    "ASK_COMMUTING": "Does it take more than an hour for you to reach your office?",
+
+    "ASK_SPEND_TIME": "Is your screen time more than 4 hours?",
+
+    "ASK_HEALTH_CHECK_UP": "Do you get a health check-up done regularly?",
+
+    "ASK_APPRECIATION": "Did you win any awards, appreciation, recommendations in the last three months?",
+
+    "ASK_FAMILY_TIME": "By the way, do you spend quality time with your family?",
+
+    "ASK_MEDITATE": "Do you calm your mind through meditation or yoga?",
+
+    "COMPLETED_HRA": "You have answered all the questions. Have a healthy day ahead. Thanks & Goodbye",
+
+    "SAVE": "Save",
+    "OPTION_NONE": "None"
+  },
+  "analysis": {
+    "HRA_SCORE_IS": "Hi Your HRA Score is",
+    "RISK": "Risk",
+    "TRANSFORMATION": "Transformation",
+    "HEALTHY": "Healthy",
+    "PRIME": "Prime",
+
+    "BODY_PROFILE": "Body Profile",
+    "LIFE_STYLE": "Life Style",
+    "STRESS": "Stress",
+    "DIET": "Diet",
+
+    "HEALTH_SCORE_MEANS": "What does your Health Score means?",
+    "HEALTH_SCORE_MEANS_DESCRIPTION": "Where do we start our journey to getting healthier? Your Health Score is that starting point. The Health Score distils your health status into a single number. Based on parameters covering your body, your feelings or stress levels, your family medical history and your lifestyle, it is expressed as a number from 1 to 900 and it changes depending on how you move the needle on these.",
+    "RISK_DESCRIPTION": "Your Health Score indicates that you are at risk from a Health perspective. You need to take urgent steps towards improving your health.",
+    "TRANSFORMATION_DESCRIPTION": "Your Health Score isn’t bad but you surely need to work on improving it to get into the Healthy spectrum.",
+    "HEALTHY_DESCRIPTION": "Great. You are in good shape but you can fine-tune your efforts on your diet, activity and lifestyle and you could very well get into the Prime zone.",
+    "PRIME_DESCRIPTION": "You are in great condition and should be proud of yourself. Ensure you follow your current health routine to stay in this zone.",
+
+    "YOUR_BMI": "Your BMI is",
+    "YOUR_BMI_UNDER_WEIGHT": "Under Weight",
+    "YOUR_BMI_HEALTHY_RANGE": "Healthy Range",
+    "YOUR_BMI_SLIGHTLY_OVER_WEIGHT": "Slightly Over Weight",
+    "YOUR_BMI_OVER_WEIGHT": "Over Weight",
+    "YOUR_BMI_OBESE": "Obese",
+    "AVG_BMI": "Avg BMI as per your age & gender",
+    "IDEAL_BMI_LOSE_WEIGHT": "For Ideal BMI Lose Weight",
+    "IDEAL_BMI_GAIN_WEIGHT": "For Ideal BMI Gain Weight",
+    "BODY_FAT_PERCENTAGE": "Your Estimated Body Fat % is",
+
+    "BIOLOGICAL_AGE": "Biological Age",
+    "BIOLOGICAL_AGE_DESCRIPTION": "Biological Age, also known as Physiological or Functional age, denotes how your body ages as result of nutrition, lifestyle, diseases and genetic factors.",
+    "BIOLOGICAL_AGE_IS": "Your Biological Age is",
+    "CHRONOLOGICAL_AGE_IS": "Your Chronological Age is",
+    "YEARS": "Years",
+
+    "HAPPINESS_INDEX": "Happiness Index",
+    "ENDORPHIN": "Endorphin",
+    "ENDORPHIN_DESCRIPTION": "Endorphin happiness increases by exercising.",
+    "DOPAMINE": "Dopamine",
+    "DOPAMINE_DESCRIPTION": "Dopamine happiness increases by achieving goals and getting recognised for the same.",
+    "OXYTOCIN": "Oxytocin",
+    "OXYTOCIN_DESCRIPTION": "Oxytocin happiness increases when you are able to surround yourself with people you trust and create strong bonding with them.",
+    "SEROTONIN": "Serotonin",
+    "SEROTONIN_DESCRIPTION": "Serotonin happiness can be influenced by mindfulness meditation which helps to control the moods."
+  }
 }

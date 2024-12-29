@@ -28,6 +28,28 @@
     background-color: var(--body-background-color);
     padding: 1rem;
 
+    h5 {
+      font-weight: 600;
+    }
+    p {
+      font-weight: 500;
+    }
+
+    .analysis-container-divider {
+      gap: 1rem;
+
+      li {
+        list-style: none;
+        width: 5px;
+        height: 5px;
+        background-color: var(--retro-border-color);
+
+        &:nth-child(4) {
+          width: 50%;
+        }
+      }
+    }
+
     .analysis-container-section {
       min-height: 50px;
       border: 2px solid var(--retro-border-color);
@@ -113,8 +135,25 @@
           font-weight: bold;
         }
       }
-      &.analysis-hra-bmis {
-        .analysis-hra-bmi {
+      &.analysis-hra-bioages {
+        h6 {
+          font-size: 0.9rem;
+        }
+        h4 {
+          font-size: 1.75rem;
+        }
+      }
+      &.analysis-hra-happiness-index {
+        .analysis-hra-happiness-index-score {
+          h4 {
+            font-size: 4rem;
+            line-height: 1;
+
+            b {
+              font-size: 1.5rem;
+              margin-bottom: 12px;
+            }
+          }
         }
       }
     }
@@ -145,6 +184,20 @@
           border-top: 2px solid var(--retro-border-color);
           font-size: 1.25rem;
           font-weight: bold;
+        }
+      }
+    }
+    .analysis-hra-bmis {
+      gap: 1rem;
+
+      .analysis-hra-bmi {
+        width: calc(50% - 0.5rem);
+
+        h6 {
+          font-size: 0.9rem;
+        }
+        h4 {
+          font-size: 1.75rem;
         }
       }
     }

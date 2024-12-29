@@ -36,6 +36,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  exports: [],
+  exports: [TranslateModule],
 })
 export class MainModule {}

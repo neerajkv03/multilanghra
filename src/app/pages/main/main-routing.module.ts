@@ -51,6 +51,7 @@ export class MainRoutingModule {}
 export const MainRoutingComponents = [
   ConfigpageComponent,
   ConfiglangComponent,
+  IntroComponent,
   ChatbotComponent,
   AnalysisComponent,
 ]; // must be followed

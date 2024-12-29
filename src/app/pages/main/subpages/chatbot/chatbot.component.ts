@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { RouteEndpoints } from '@constants/route-endpoints';
 import { HttpsService } from '@services/https.service';
@@ -33,7 +34,8 @@ export class ChatbotComponent implements OnInit {
     private globalService: GlobalService,
     private httpsService: HttpsService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private translate: TranslateService
   ) {}
   lang: string = '';
   faRotate = faRotate;
@@ -43,7 +45,7 @@ export class ChatbotComponent implements OnInit {
   answerInputTwo: FormControl = new FormControl(null, []);
   questionsArray: Question[] = [];
   answeredQuestionsArray: Question[] = [];
-  curentQuestionIndex: number = 8;
+  curentQuestionIndex: number = 0;
   currentQuestion: Question | any = null;
   minDobDate: Date = new Date();
   maxDobDate: Date = new Date();
@@ -60,6 +62,12 @@ export class ChatbotComponent implements OnInit {
     this.maxDobDate = new Date(
       new Date().setFullYear(new Date().getFullYear() - 18)
     );
+
+    this.translate.get('chatbot.ASK_BIRTH_DATE').subscribe({
+      next: (res: string) => {
+        console.log(res);
+      },
+    });
 
     this.loadCurrentQuestion();
   }
